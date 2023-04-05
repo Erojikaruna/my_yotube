@@ -3,11 +3,8 @@ import Button from "./Button";
 
 const ButtonList = () => {
   return (
-    <div>
-      <div
-        className=" slick-slide  scroll-m-1 flex flex-row whitespace-nowrap px-4 justify-center 
-     h-13 related "
-      >
+    <div className="bg-black w-full fixed">
+      <div>
         <Button name="All" />
         <Button name="Music" />
         <Button name="Gaming" />
@@ -27,3 +24,6 @@ const ButtonList = () => {
 export default ButtonList;
 
 // flex justify-center text-white
+
+// className=" fixed top-[75px]  flex flex-row whitespace-nowrap px-40
+//      h-13 overflow-x-hidden w-11/12 "

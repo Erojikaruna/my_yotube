@@ -6,6 +6,7 @@ import store from "./utils/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import SearchedVideo from "./components/SearchedVideo";
 
 const appRouter = createBrowserRouter([
   {
@@ -27,8 +28,9 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <div className="flex flex-col h-full">
+      <div>
         <Header />
+
         <RouterProvider router={appRouter} />
       </div>
     </Provider>
@@ -47,3 +49,4 @@ export default App;
  *   -videoContainer
  *   -videocard
  */
+// className="flex flex-col h-full"

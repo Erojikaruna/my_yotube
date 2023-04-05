@@ -1,13 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { FaHome, FaItunesNote } from "react-icons/fa";
+import { FaItunesNote } from "react-icons/fa";
+import { BiLike, BiHistory } from "react-icons/bi";
+import { RiVideoLine } from "react-icons/ri";
 import {
   MdSensors,
   MdSubscriptions,
   MdOutlineSlowMotionVideo,
   MdOutlineWatchLater,
-  MdMovieCreation,
   MdVideoLibrary,
   MdOutlineSportsVolleyball,
 } from "react-icons/md";
@@ -15,7 +16,15 @@ import { ImNewspaper } from "react-icons/im";
 import { HiFire, HiShoppingBag } from "react-icons/hi";
 import { SiYoutubegaming } from "react-icons/si";
 import { GiFilmStrip } from "react-icons/gi";
-import { IconContext } from "react-icons/lib";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faGear,
+  faFlag,
+  faQuestionCircle,
+  faMessage,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -23,137 +32,213 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="sticky  top-0  z-10 translate-[-50%]  bg-white text-black py-5 px-2 md:relative   overflow-y-auto h-full">
-      <div className=" flex flex-col px-5">
-        <IconContext.Provider
-          value={{
-            size: "1rem",
-            color: "black",
-            margin: "1rem",
-            padding: "1rem",
-            display: "inline-flex",
-          }}
-        >
-          <ul className="flex flex-col ">
-            <li className="h-9">
-              <Link to="/">
-                <FaHome style={{ display: "inline-flex" }} />
+    <div className=" p-5 shadow-lg w-48 bg-black text-white relative">
+      <div className=" ">
+        <ul>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <div className="flex flex-col pl-1 justify-center">
+                <FontAwesomeIcon icon={faHome} />
+              </div>
+              <Link className=" pl-2" to="/">
                 Home
               </Link>
-            </li>
-            <li className="h-9">
-              <MdOutlineSlowMotionVideo style={{ display: "inline-flex" }} />
-              Shorts
-            </li>
-            <li className="h-9">
-              <MdSubscriptions style={{ display: "inline-flex" }} />
-              Subscription
-            </li>
-            <li className="h-9">
-              <MdOutlineWatchLater style={{ display: "inline-flex" }} />{" "}
-              WatchLater
-            </li>
-          </ul>
-          <hr className="border-black my-4" />
-          <h1 className="font-bold text-black h-9">Subscription</h1>
-          <ul>
-            <li className="h-9">
-              <FaItunesNote style={{ display: "inline-flex" }} />
-              Music
-            </li>
-            <li className="h-9">
-              <MdOutlineSportsVolleyball style={{ display: "inline-flex" }} />
-              Sports
-            </li>
-            <li className="h-9">
-              <SiYoutubegaming style={{ display: "inline-flex" }} />
-              Gaming
-            </li>
-            <li className="h-9">
-              <GiFilmStrip style={{ display: "inline-flex" }} />
-              Movies
-            </li>
-          </ul>
-          <hr className="border-black my-4" />
-          <h1 className="font-bold text-black h-10">Explore</h1>
-          <ul>
-            <li className="h-9">
-              <HiFire style={{ display: "inline-flex" }} />
-              Trending
-            </li>
-            <li className="h-9">
-              <GiFilmStrip style={{ display: "inline-flex" }} />
-              Films
-            </li>
-            <li className="h-9">
-              <MdSensors style={{ display: "inline-flex" }} />
-              Live
-            </li>
-            <li className="h-9">
-              <ImNewspaper style={{ display: "inline-flex" }} />
-              News
-            </li>
-            <li className="h-9">
-              <HiShoppingBag style={{ display: "inline-flex" }} />
-              Shopping
-            </li>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <MdOutlineSlowMotionVideo className="h-6" />
 
-            <li className="h-9">
-              <MdVideoLibrary style={{ display: "inline-flex" }} />
-              Library
-            </li>
-          </ul>
-        </IconContext.Provider>
+              <span className=" pl-2 font-semi-bold">Shorts</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <MdSubscriptions className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Subscription</span>
+            </div>
+          </li>
+          <hr className="border  border-white  my-3" />
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <MdVideoLibrary className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Library</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <BiHistory className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">History</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800  hover:rounded-lg cursor-pointer">
+              <RiVideoLine className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Yourvideos</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <MdOutlineWatchLater className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Watch Later</span>
+            </div>
+          </li>
+
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800  hover:rounded-lg cursor-pointer">
+              <BiLike className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Liked videos</span>
+            </div>
+          </li>
+          <hr className="border-white my-4" />
+          <h2 className="text-start font-bold">Explore</h2>
+
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <HiFire className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Trending</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <HiShoppingBag className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Shopping</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <FaItunesNote className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Music</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <GiFilmStrip className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Films</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <MdSensors className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Live</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800  hover:rounded-lg cursor-pointer">
+              <SiYoutubegaming className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Gaming</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <ImNewspaper className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">News</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <MdOutlineSportsVolleyball className="h-6" />
+
+              <span className=" pl-2 font-semi-bold">Sports</span>
+            </div>
+          </li>
+          <hr className="border-white my-2" />
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <div className="h-7">
+                <FontAwesomeIcon icon={faGear} />
+              </div>
+
+              <span className=" pl-2 font-semi-bold">Settings</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <div className="h-7">
+                <FontAwesomeIcon icon={faFlag} />
+              </div>
+
+              <span className=" pl-2 font-semi-bold">Report History</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800  hover:rounded-lg cursor-pointer">
+              <div className="h-7">
+                <FontAwesomeIcon icon={faQuestionCircle} />
+              </div>
+
+              <span className=" pl-2 font-semi-bold">Help</span>
+            </div>
+          </li>
+          <li>
+            <div className="mx-2 py-2 rounded-lg flex  justify-start hover:bg-zinc-800 hover:rounded-lg cursor-pointer">
+              <div className="h-7">
+                <FontAwesomeIcon icon={faMessage} />
+              </div>
+
+              <span className=" pl-2 font-semi-bold">SendFeedback</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );
 };
 
+const ClosedSidebar = () => {
+  return (
+    <>
+      <div className="mr-2">
+        <div className="w-20 top-16 z-10 fixed mr-3 px-2 ">
+          <ul>
+            <li className="py-1 ">
+              <div className=" hover:bg-slate-300  px-3 py-2 text-center">
+                <FontAwesomeIcon icon={faHome} />
+                Home
+              </div>
+            </li>
+            <li className="py-1">
+              <div className="text-center text-md hover:bg-slate-300 ">
+                <div className="    px-6 py-2 text-xl">
+                  <MdOutlineSlowMotionVideo />
+                </div>
+                Shorts
+              </div>
+            </li>
+            <li className="py-1 ">
+              <div className="hover:bg-neutral-500">
+                <div className="px-6  py-1  text-md">
+                  <MdSubscriptions />
+                </div>
+                Subscription
+              </div>
+            </li>
+            <li className="py-2">
+              <div className="text-center hover:bg-neutral-500">
+                <div className="px-6 py-1  text-md">
+                  <MdVideoLibrary />
+                </div>
+                Library
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
 export default Sidebar;
-
-// /* {/* <>
-// <div className=" p-7 shadow-lg w-40 ">
-//   <div className="">
-//     <ul className="font-semibold  ">
-//       <li className="h-24  ">
-//         <Link to="/">
-//           <img className="w-60 px-3 h-10 " alt="home" src={home} />
-//           Home
-//         </Link>
-//       </li>
-//       <img className="px-6" alt="shorts" src={shorts} />
-//       <li className="h-16">Shorts</li>
-//       <img className="px-8" alt="subscribe" src={subscribe} />
-//       <li className="h-16">Subscription</li>
-//       <img className="px-8" alt="watchlater" src={watchlater} />
-//       <li className="h-16">WatchLater</li>
-//     </ul>
-//   </div>
-//   <div>
-//     <hr />
-//     <ul className="text-lg">
-//       <li className="h-10">Library</li>
-//       <li className="h-10">History</li>
-//       <li className="h-10">WatchLater</li>
-//       <li className="h-10">Likedvideos</li>
-//     </ul>
-//   </div>
-//   <div>
-//     <hr />
-//     <ul className="text-lg">
-//       <h1 className="font-bold h-10">Explore</h1>
-//       <li className="h-10">Trending</li>
-//       <li className="h-10">Music</li>
-//       <li className="h-10">Shopping</li>
-//       <li className="h-10">Live</li>
-//       <li className="h-10">Gaming</li>
-//       <li className="h-10">News</li>
-//       <li className="h-10">Sport</li>
-//       <li className="h-10">Learning </li>
-//       <li v>Fashion & beauty</li>
-//     </ul>
-//   </div>
-// </div>
-// </> */} */
-
-/*{/* */

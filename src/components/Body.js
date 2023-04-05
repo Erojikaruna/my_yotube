@@ -5,9 +5,8 @@ import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
-    <div className="flex flex-row h-[calc(100%-56px)]">
+    <div className="flex">
       <Sidebar />
-
       <Outlet />
     </div>
   );

@@ -48,11 +48,11 @@ const Header = () => {
   };
 
   return (
-    <div className=" flex flex-row items-center  justify-between h-20 px-4 shadow-2xl  ">
-      <div className="flex items-center h-5">
+    <div className=" sticky top-0 z-10 flex flex-row items-center bg-black justify-between h-16 px-4 ">
+      <div className="flex items-center h-5 ">
         <div className="p-1 m-2">
           <SlMenu
-            className="text-black text-xl"
+            className="text-white text-xl"
             onClick={() => toggleMenuHandler()}
           />
         </div>
@@ -67,7 +67,7 @@ const Header = () => {
       <div className="">
         <div>
           <input
-            className="w-96 p-2  border border-gray-400 rounded-l-full "
+            className="w-96 p-2  border border-gray-400 rounded-l-full bg-black focus:outline-none focus-within:border-blue-500 text-white"
             type="text"
             placeholder="Search"
             value={searchQuery}
@@ -83,12 +83,12 @@ const Header = () => {
         </div>
 
         {showSuggestions && (
-          <div className=" bg-white py-2 px-3 m-2 w-96  rounded-lg text-black absolute ">
+          <div className="  py-2 px-3 m-2 w-96  rounded-lg text-white bg-black absolute  ">
             <ul>
               {suggestions.map((s) => (
                 <li
                   key={s}
-                  className="py-2 px-3 shadow-sm hover:bg-neutral-400"
+                  className="py-2 px-3 shadow-sm  hover:bg-neutral-400"
                 >
                   🔍{s}
                 </li>
@@ -100,7 +100,7 @@ const Header = () => {
 
       <div className="flex items-center gap-4">
         <div>
-          <FiBell className="text-xl  text-black cursor-pointer " />
+          <FiBell className="text-xl  text-white cursor-pointer " />
         </div>
         <img
           className="h-8 "

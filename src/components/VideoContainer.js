@@ -18,10 +18,8 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="">
-      {/* <SideNav className="text-black" /> */}
-
-      <div className=" flex flex-wrap gap-4 p-5 justify-start">
+    <div>
+      <div className=" flex  flex-wrap gap-4 pt-12 justify-start bg-black text-white">
         {videos.map((video) => (
           <Link key={video.id} to={"/watch?v=" + video.id}>
             <VideoCard info={video} />
@@ -33,3 +31,5 @@ const VideoContainer = () => {
 };
 
 export default VideoContainer;
+
+// className=" ml-32 flex relative flex-wrap gap-4 p-5 justify-start "
