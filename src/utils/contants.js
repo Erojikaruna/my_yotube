@@ -14,6 +14,3 @@ export const YOUTUBE_CHANNEL_ID =
 export const YOUTUBE_RELATED_ID =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&key=" +
   GOOGLE_API_KEY;
-
-export const SEARCH_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";

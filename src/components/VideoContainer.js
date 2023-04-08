@@ -19,7 +19,7 @@ const VideoContainer = () => {
 
   return (
     <div>
-      <div className=" flex  flex-wrap gap-4 pt-12 justify-start bg-black text-white">
+      <div className=" flex  flex-wrap gap-4  justify-start bg-white text-black">
         {videos.map((video) => (
           <Link key={video.id} to={"/watch?v=" + video.id}>
             <VideoCard info={video} />

@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const ButtonList = () => {
   return (
-    <div className="bg-black w-full fixed">
+    <div className=" flex shadow-lg bg-white w-full">
       <div>
         <Button name="All" />
         <Button name="Music" />
@@ -12,10 +12,10 @@ const ButtonList = () => {
         <Button name="Comedy" />
         <Button name="News" />
         <Button name="Cricket" />
-        <Button name="Recently Uploaded" />
         <Button name="New to you" />
-        <Button name="Practice" />
-        <Button name="Thoughts" />
+        <Button name="Game Shows" />
+        <Button name="Filmi" />
+        <Button name="Recently Uploaded" />
       </div>
     </div>
   );

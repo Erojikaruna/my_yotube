@@ -2,28 +2,28 @@ import React from "react";
 
 const commentsData = [
   {
-    name: "Akshay Saini",
+    name: "Karuna Eroji",
     text: "lorem ipsum dolor sit amet, consectetur adip",
     replies: [],
   },
   {
-    name: "Akshay Saini",
+    name: "Karuna Eroji",
     text: "lorem ipsum dolor sit amet, consectetur adip",
     replies: [
       {
-        name: "Akshay Saini",
+        name: "Karuna Eroji",
         text: "lorem ipsum dolor sit amet, consectetur adip",
         replies: [
           {
-            name: "Akshay Saini",
+            name: "Karuna Eroji",
             text: "lorem ipsum dolor sit amet, consectetur adip",
             replies: [
               {
-                name: "Akshay Saini",
+                name: "Karuna Eroji",
                 text: "lorem ipsum dolor sit amet, consectetur adip",
                 replies: [
                   {
-                    name: "Akshay Saini",
+                    name: "Karuna Eroji",
                     text: "lorem ipsum dolor sit amet, consectetur adip",
                     replies: [],
                   },
@@ -36,21 +36,33 @@ const commentsData = [
     ],
   },
   {
-    name: "Akshay Saini",
+    name: "Karuna Eroji",
     text: "lorem ipsum dolor sit amet, consectetur adip",
     replies: [],
   },
   {
-    name: "Akshay Saini",
+    name: "Karuna Eroji",
     text: "lorem ipsum dolor sit amet, consectetur adip",
-    replies: [],
+    replies: [
+      {
+        name: "Karuna Eroji",
+        text: "lorem ipsum dolor sit amet, consectetur adip",
+        replies: [
+          {
+            name: "Karuna Eroji",
+            text: "lorem ipsum dolor sit amet, consectetur adip",
+            replies: [],
+          },
+        ],
+      },
+    ],
   },
 ];
 
 const Comment = ({ data }) => {
   const { name, text, replies } = data;
   return (
-    <div className="flex shadow-sm w-[600px] bg-gray-100 p-1   rounded-lg my-1">
+    <div className="flex shadow-sm border bg-gray-100 p-1   rounded-lg my-1">
       <img
         className="w-12 h-12"
         alt="user"

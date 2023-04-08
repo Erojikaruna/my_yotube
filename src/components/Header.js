@@ -4,7 +4,11 @@ import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/contants";
 import { cacheResults } from "../utils/searchSlice";
 import { SlMenu } from "react-icons/sl";
-import { FiBell } from "react-icons/fi";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { RiVideoAddLine } from "react-icons/ri";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { CiSearch } from "react-icons/ci";
+import { MdOutlineMic } from "react-icons/md";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,26 +52,28 @@ const Header = () => {
   };
 
   return (
-    <div className=" sticky top-0 z-10 flex flex-row items-center bg-black justify-between h-16 px-4 ">
-      <div className="flex items-center h-5 ">
-        <div className="p-1 m-2">
+    <div className=" fixed bg-white w-[100rem] grid grid-flow-col  p-[14px] px-5 mx-2 shadow-lg">
+      <div className="">
+        <div className="flex col-span-1">
           <SlMenu
-            className="text-white text-xl"
+            className="text-black mt-3"
+            size={20}
             onClick={() => toggleMenuHandler()}
           />
+
+          <a href="/">
+            <img
+              className="h-11  p-3"
+              alt="logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
+            />
+          </a>
         </div>
-        <a href="/">
-          <img
-            className="h-11  p-3"
-            alt="logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
-          />
-        </a>
       </div>
       <div className="">
-        <div>
+        <div className="flex col-span-9">
           <input
-            className="w-96 p-2  border border-gray-400 rounded-l-full bg-black focus:outline-none focus-within:border-blue-500 text-white"
+            className="w-[30rem] p-1  border border-gray-400 rounded-l-full bg-white focus:outline-none focus-within:border-blue-500 "
             type="text"
             placeholder="Search"
             value={searchQuery}
@@ -76,14 +82,14 @@ const Header = () => {
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)}
           />
-          <button className="border   border-gray-400 w-[40px]   h-[41px]  rounded-r-full">
-            🔍
+          <button className="border   border-gray-400  px-5  rounded-r-full">
+            <CiSearch className="cursor-pointer" size={20} />
           </button>
-          {/*<img className="w-8 p-1 m-1 " alt="microphone" src={microphone} />*/}
+          <MdOutlineMic className="cursor-pointer ml-3" size={30} />
         </div>
 
         {showSuggestions && (
-          <div className="  py-2 px-3 m-2 w-96  rounded-lg text-white bg-black absolute  ">
+          <div className="  py-2 px-3 m-2 w-96  rounded-lg text-black bg-white absolute  ">
             <ul>
               {suggestions.map((s) => (
                 <li
@@ -98,15 +104,10 @@ const Header = () => {
         )}
       </div>
 
-      <div className="flex items-center gap-4">
-        <div>
-          <FiBell className="text-xl  text-white cursor-pointer " />
-        </div>
-        <img
-          className="h-8 "
-          alt="user"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTalURue8uREswsyHXvJ9qmw4TSZqCxIEQNjg&usqp=CAU"
-        />
+      <div className="flex  col-span-2 space-x-1 gap-3">
+        <RiVideoAddLine className="cursor-pointer" size={30} />
+        <IoMdNotificationsOutline className="cursor-pointer" size={30} />
+        <HiOutlineUserCircle className="cursor-pointer" size={30} />
       </div>
     </div>
   );

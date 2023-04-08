@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/appSlice";
 import CommentsContainer from "./CommentsContainer";
+import { BiLike, BiDislike } from "react-icons/bi";
+import { RiShareForwardLine } from "react-icons/ri";
+import { BsDownload } from "react-icons/bs";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -16,20 +19,41 @@ const WatchPage = () => {
 
   return (
     <div>
-      <div className="flex flex-col bg-black w-full">
-        <div className="px-10 m-1 ">
-          <iframe
-            width="700"
-            height="400"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+      <iframe
+        className="pl-7"
+        width="1250"
+        height="500"
+        src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+      <div className="flex flex-row gap-3 justify-between">
+        <div className="flex flex-row gap-5">
+          <img
+            className="w-[150px] pl-6 hover:scale-95 cursor-pointer transition-all"
+            src="https://cdn.pixabay.com/photo/2021/07/17/09/33/subscribe-6472631_1280.png"
+            alt="subscribe"
+          />
+          <button className="rounded-2xl h-10 cursor-pointer hover:scale-95 bg-black text-white p-2 px-4 mt-3 transition-all">
+            join
+          </button>
         </div>
-        <CommentsContainer />
+        <div className="flex flex-row gap-10 mr-7">
+          <BiLike className="hover:scale-90 transition-all mt-3" size={30} />
+          <BiDislike className="hover:scale-90 transition-all mt-3" size={30} />
+          <RiShareForwardLine
+            className="hover:scale-90 transition-all mt-3"
+            size={30}
+          />
+          <BsDownload
+            className="hover:scale-90 transition-all mt-3"
+            size={30}
+          />
+        </div>
       </div>
+      <CommentsContainer />
     </div>
   );
 };
