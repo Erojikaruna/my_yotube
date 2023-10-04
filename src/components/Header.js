@@ -52,7 +52,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" fixed bg-white w-[100rem] grid grid-flow-col  p-[14px] px-5 mx-2 shadow-lg">
+    <div className=" fixed bg-white w-[100rem] grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg">
       <div className="">
         <div className="flex col-span-1">
           <SlMenu
@@ -73,7 +73,7 @@ const Header = () => {
       <div className="">
         <div className="flex col-span-9">
           <input
-            className="w-[30rem] p-1  border border-gray-400 rounded-l-full bg-white focus:outline-none focus-within:border-blue-500 "
+            className="w-[30rem] p-1 px-4 border border-gray-400 rounded-l-full bg-white focus:outline-none focus-within:border-blue-500 "
             type="text"
             placeholder="Search"
             value={searchQuery}
