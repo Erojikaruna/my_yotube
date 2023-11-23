@@ -11,7 +11,7 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="col-span-1 w-20 mt-20 fixed">
+    <div className="col-span-2 w-20 mt-20 fixed">
       <div className="pl-7 pt-7">
         <ul>
           <AiFillHome size={25} />

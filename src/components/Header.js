@@ -52,7 +52,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" fixed bg-white w-[100rem] grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg">
+    <div className=" fixed bg-white w-[100rem]   grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg ">
       <div className="">
         <div className="flex col-span-1">
           <SlMenu
@@ -63,7 +63,7 @@ const Header = () => {
 
           <a href="/">
             <img
-              className="h-11  p-3"
+              className="h-11  p-3 "
               alt="logo"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
             />
