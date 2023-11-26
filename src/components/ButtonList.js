@@ -1,9 +1,15 @@
 import React from "react";
 import Button from "./Button";
+import { useSelector } from "react-redux";
 
 const ButtonList = () => {
+  const theme = useSelector((store) => store.theme.isDarkTheme);
   return (
-    <div className="  flex shadow-lg bg-white w-full">
+    <div
+      className={`flex shadow-lg bg-white w-full ${
+        theme ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
+    >
       <div>
         <Button name="All" />
         <Button name="Music" />

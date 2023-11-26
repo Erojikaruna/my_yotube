@@ -14,3 +14,6 @@ export const YOUTUBE_CHANNEL_ID =
 export const YOUTUBE_RELATED_ID =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&key=" +
   GOOGLE_API_KEY;
+
+export const IMG =
+  "https://www.logo.wine/a/logo/YouTube/YouTube-White-Full-Color-Dark-Background-Logo.wine.svg";

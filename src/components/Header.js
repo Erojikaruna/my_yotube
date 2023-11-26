@@ -9,6 +9,8 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineMic } from "react-icons/md";
+import { toggleTheme } from "../utils/themeSlice";
+import { IMG } from "../utils/contants";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -16,6 +18,7 @@ const Header = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const searchCache = useSelector((store) => store.search);
+  const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
 
   const dispatch = useDispatch();
 
@@ -50,22 +53,33 @@ const Header = () => {
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
+  const toggleThemeHandler = () => {
+    dispatch(toggleTheme());
+  };
 
   return (
-    <div className=" fixed bg-white w-[100rem]   grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg ">
+    <div
+      className={` fixed bg-white w-[100rem]   grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg ${
+        isDarkTheme ? "bg-gray-900 text-white" : "bg-slate-50 text-black"
+      }`}
+    >
       <div className="">
         <div className="flex col-span-1">
           <SlMenu
-            className="text-black mt-3"
+            className={` mt-3 ${isDarkTheme ? "text-white" : "text-black"}`}
             size={20}
             onClick={() => toggleMenuHandler()}
           />
 
           <a href="/">
             <img
-              className="h-11  p-3 "
+              className={`h-11  p-3 ${isDarkTheme ? " h-12 p-2 " : ""}`}
               alt="logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
+              src={
+                isDarkTheme
+                  ? "https://github.com/Nitya-Somani/YouTubeClone/blob/main/public/youTube-Header-logo.png?raw=true"
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
+              }
             />
           </a>
         </div>
@@ -73,7 +87,9 @@ const Header = () => {
       <div className="">
         <div className="flex col-span-9">
           <input
-            className="w-[30rem] p-1 px-4 border border-gray-400 rounded-l-full bg-white focus:outline-none focus-within:border-blue-500 "
+            className={`w-[30rem] p-1 px-4 border border-gray-400 rounded-l-full bg-white focus:outline-none focus-within:border-blue-500 ${
+              isDarkTheme ? "bg-gray-900 " : "bg-white"
+            }`}
             type="text"
             placeholder="Search"
             value={searchQuery}
@@ -89,7 +105,11 @@ const Header = () => {
         </div>
 
         {showSuggestions && (
-          <div className="  py-2 px-3 m-2 w-96  rounded-lg text-black bg-white absolute  ">
+          <div
+            className={`py-2 px-3 m-2 w-[400px]  rounded-lg text-black bg-white absolute ${
+              isDarkTheme ? "bg-gray-900 text-white" : "bg-white"
+            }`}
+          >
             <ul>
               {suggestions.map((s) => (
                 <li
@@ -105,6 +125,14 @@ const Header = () => {
       </div>
 
       <div className="flex  col-span-2 space-x-1 gap-3">
+        <button
+          className={`rounded-full p-2 ${
+            isDarkTheme ? "bg-gray-800 h-9" : "bg-gray-300 h-9"
+          }`}
+          onClick={toggleThemeHandler}
+        >
+          {isDarkTheme ? "LIGHT⛅" : "DARK🌛"}
+        </button>
         <RiVideoAddLine className="cursor-pointer" size={30} />
         <IoMdNotificationsOutline className="cursor-pointer" size={30} />
         <HiOutlineUserCircle className="cursor-pointer" size={30} />

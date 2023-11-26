@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEOS_API } from "../utils/contants";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const VideoContainer = () => {
+  const theme = useSelector((store) => store.theme.isDarkTheme);
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -19,7 +21,11 @@ const VideoContainer = () => {
 
   return (
     <div>
-      <div className=" flex  flex-wrap gap-4  justify-start bg-white text-black">
+      <div
+        className={`flex  flex-wrap gap-4  justify-start bg-white text-black ${
+          theme ? "bg-gray-900 text-white" : "bg-white text-black"
+        }`}
+      >
         {videos.map((video) => (
           <Link key={video.id} to={"/watch?v=" + video.id}>
             <VideoCard info={video} />
