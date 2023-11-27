@@ -6,7 +6,7 @@ const ButtonList = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   return (
     <div
-      className={`flex shadow-lg bg-white w-full ${
+      className={`flex shadow-lg w-full ${
         theme ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >
@@ -28,8 +28,3 @@ const ButtonList = () => {
 };
 
 export default ButtonList;
-
-// flex justify-center text-white
-
-// className=" fixed top-[75px]  flex flex-row whitespace-nowrap px-40
-//      h-13 overflow-x-hidden w-11/12 "

@@ -22,7 +22,7 @@ const VideoContainer = () => {
   return (
     <div>
       <div
-        className={`flex  flex-wrap gap-4  justify-start bg-white text-black ${
+        className={`flex  flex-wrap gap-4  justify-star ${
           theme ? "bg-gray-900 text-white" : "bg-white text-black"
         }`}
       >
@@ -37,5 +37,7 @@ const VideoContainer = () => {
 };
 
 export default VideoContainer;
+
+// className=" ml-32 flex relative flex-wrap gap-4 p-5 justify-start "
 
 // className=" ml-32 flex relative flex-wrap gap-4 p-5 justify-start "

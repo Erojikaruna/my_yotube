@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const commentsData = [
   {
@@ -60,9 +61,14 @@ const commentsData = [
 ];
 
 const Comment = ({ data }) => {
+  const theme = useSelector((store) => store.theme.isDarkTheme);
   const { name, text, replies } = data;
   return (
-    <div className="flex shadow-sm border bg-gray-100 p-1   rounded-lg my-1">
+    <div
+      className={`flex shadow-sm border bg-gray-100 p-1   rounded-lg my-1 ${
+        theme ? "bg-gray-900" : "bg-gray-100"
+      }`}
+    >
       <img
         className="w-12 h-12"
         alt="user"

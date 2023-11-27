@@ -10,7 +10,6 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineMic } from "react-icons/md";
 import { toggleTheme } from "../utils/themeSlice";
-import { IMG } from "../utils/contants";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -59,7 +58,7 @@ const Header = () => {
 
   return (
     <div
-      className={` fixed bg-white w-[100rem]   grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg ${
+      className={` fixed  w-[100rem]   grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg ${
         isDarkTheme ? "bg-gray-900 text-white" : "bg-slate-50 text-black"
       }`}
     >
@@ -73,7 +72,7 @@ const Header = () => {
 
           <a href="/">
             <img
-              className={`h-11  p-3 ${isDarkTheme ? " h-12 p-2 " : ""}`}
+              className={`h-11  p-3 ${isDarkTheme ? " -m-3 h-16 p-2 " : ""}`}
               alt="logo"
               src={
                 isDarkTheme
@@ -87,7 +86,7 @@ const Header = () => {
       <div className="">
         <div className="flex col-span-9">
           <input
-            className={`w-[30rem] p-1 px-4 border border-gray-400 rounded-l-full bg-white focus:outline-none focus-within:border-blue-500 ${
+            className={`w-[30rem] p-1 px-4 border border-gray-400 rounded-l-full focus:outline-none focus-within:border-blue-500 ${
               isDarkTheme ? "bg-gray-900 " : "bg-white"
             }`}
             type="text"
@@ -106,8 +105,8 @@ const Header = () => {
 
         {showSuggestions && (
           <div
-            className={`py-2 px-3 m-2 w-[400px]  rounded-lg text-black bg-white absolute ${
-              isDarkTheme ? "bg-gray-900 text-white" : "bg-white"
+            className={`py-2 px-3 m-2 w-[400px]  rounded-lg  absolute ${
+              isDarkTheme ? "bg-gray-900 text-white" : "bg-white text-black"
             }`}
           >
             <ul>
