@@ -5,10 +5,8 @@ const Button = ({ name }) => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   return (
     <button
-      className={`px-2 py-1 m-3  rounded-full hover:bg-zinc-600 hover:text-black ${
-        theme
-          ? "bg-gray-900 border border-gray-600"
-          : "text-white bg-neutral-700"
+      className={`rounded-lg  font-semibold hover:bg-[#eaeaea]  mr-[12px] height-[32px] whitespace-nowrap flex align-middle justify-center px-[12px] py-[8px] text-[13px] text-center ${
+        theme ? "bg-gray-800  border-gray-600" : "text-black bg-[#f5f5f5]"
       }`}
     >
       {name}

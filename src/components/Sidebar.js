@@ -1,55 +1,148 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { AiFillHome, AiOutlinePlayCircle } from "react-icons/ai";
-import { MdSubscriptions, MdVideoLibrary, MdWatchLater } from "react-icons/md";
+import { MdVideoLibrary, MdWatchLater } from "react-icons/md";
+import { AiFillHome, AiOutlineFlag } from "react-icons/ai";
+import { MdLocalFireDepartment, MdLiveTv } from "react-icons/md";
+import { CgMusicNote } from "react-icons/cg";
+import { FiFilm } from "react-icons/fi";
+import { IoGameControllerSharp } from "react-icons/io5";
 import { ImNewspaper } from "react-icons/im";
+import { GiDiamondTrophy, GiEclipse } from "react-icons/gi";
+import { RiLightbulbLine, RiFeedbackLine } from "react-icons/ri";
+import { FiSettings, FiHelpCircle } from "react-icons/fi";
+import { BiSolidVideos, BiSolidShoppingBag } from "react-icons/bi";
+import { MdSubscriptions, MdPodcasts } from "react-icons/md";
+import SidebarItems from "./SidebarItems";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   //Early return pattern
-  if (!isMenuOpen) return null;
+  if (!isMenuOpen) return <SidebarItems />;
 
   return (
-    <div className="col-span-2 w-20 mt-20 fixed">
-      <div className="pl-7 pt-7">
-        <ul>
-          <AiFillHome size={25} />
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-        </ul>
+    <div className="sidebar fixed bottom-0 left-0 h-screen right-0 z-30 md:h-full w-[215px] ml-6 top-12 overflow-hidden overflow-y-scroll py-4 translate-x-[-240px] md:translate-x-0 transition-all">
+      <div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <Link to="/">
+              <AiFillHome size="25" />
+            </Link>
+          </span>
+          <span>Home</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <BiSolidVideos size="25" />
+          </span>
+          <span>Shorts</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <MdSubscriptions size="25" />
+          </span>
+          <span>Subscriptions</span>
+        </div>
       </div>
-      <div className="pl-7 pt-7">
-        <ul>
-          <AiOutlinePlayCircle size={25} />
-          <li>Shorts</li>
-        </ul>
+      <hr className="my-5 border-gray-500" />
+      <h1>Explore</h1>
+      <div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <MdLocalFireDepartment size="25" />
+          </span>
+          <span>Trending</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <BiSolidShoppingBag size="25" />
+          </span>
+          <span>Shopping</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <CgMusicNote size="25" />
+          </span>
+          <span>Music</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <FiFilm size="25" />
+          </span>
+          <span>Films</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <MdLiveTv size="25" />
+          </span>
+          <span>Live</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <IoGameControllerSharp size="25" />
+          </span>
+          <span>Gaming</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <ImNewspaper size="25" />
+          </span>
+          <span>News</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <GiDiamondTrophy size="25" />
+          </span>
+          <span>Sport</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <RiLightbulbLine size="25" />
+          </span>
+          <span>Learning</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <GiEclipse size="25" />
+          </span>
+          <span>Fashion & beauty</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <MdPodcasts size="25" />
+          </span>
+          <span>Podcasts</span>
+        </div>
       </div>
-      <div className="pl-7 pt-7">
-        <ul>
-          <MdSubscriptions size={25} />
-          <li>Subscription</li>
-        </ul>
+      <hr className="my-5 border-gray-500" />
+      <div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <FiSettings size="25" />
+          </span>
+          <span>Settings</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <AiOutlineFlag size="25" />
+          </span>
+          <span>Report history</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <FiHelpCircle size="25" />
+          </span>
+          <span>Help</span>
+        </div>
+        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+          <span className="mr-4">
+            <RiFeedbackLine size="25" />
+          </span>
+          <span>Send feedback</span>
+        </div>
       </div>
-      <div className="pt-7 pl-7">
-        <ul>
-          <MdWatchLater size={25} />
-          <li>WatchLater</li>
-        </ul>
-      </div>
-      <div className="pl-7 pt-7">
-        <ul>
-          <ImNewspaper size={25} />
-          <li>News</li>
-        </ul>
-      </div>
-      <div className="pt-7 pl-7">
-        <ul>
-          <MdVideoLibrary size={25} />
-          <li>Library</li>
-        </ul>
-      </div>
+      <hr className="my-5 border-gray-500" />
+      <div className="text-black/[0.5] text-[12px]">Clone by: Aruna</div>
     </div>
   );
 };

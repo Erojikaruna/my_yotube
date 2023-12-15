@@ -58,7 +58,7 @@ const Header = () => {
 
   return (
     <div
-      className={` fixed  w-[100rem]   grid grid-flow-col  p-[18px] px-5 mx-2 shadow-lg ${
+      className={` fixed top-0 left-0 z-20 flex  justify-between items-center p-2  px-5  w-screen ${
         isDarkTheme ? "bg-gray-900 text-white" : "bg-slate-50 text-black"
       }`}
     >
@@ -72,11 +72,11 @@ const Header = () => {
 
           <a href="/">
             <img
-              className={`h-11  p-3 ${isDarkTheme ? " -m-3 h-16 p-2 " : ""}`}
+              className={`h-11  p-3 ${isDarkTheme ? " " : ""}`}
               alt="logo"
               src={
                 isDarkTheme
-                  ? "https://github.com/Nitya-Somani/YouTubeClone/blob/main/public/youTube-Header-logo.png?raw=true"
+                  ? "https://imgs.search.brave.com/EHDLD9McyAne0NhQVLiX12LU04w6luoHeKayeaVKw8Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9mcmVl/bG9nb3BuZy5jb20v/aW1hZ2VzL2FsbF9p/bWcvMTY1NjUwMTQx/NXlvdXR1YmUtcG5n/LWxvZ28ucG5n"
                   : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
               }
             />
@@ -123,18 +123,18 @@ const Header = () => {
         )}
       </div>
 
-      <div className="flex  col-span-2 space-x-1 gap-3">
+      <div className="flex  col-span-2 space-x-1 gap-3 items-center">
         <button
-          className={`rounded-full p-2 ${
-            isDarkTheme ? "bg-gray-800 h-9" : "bg-gray-300 h-9"
+          className={`rounded-full p-2 h-11 ${
+            isDarkTheme ? "" : "bg-gray-100 "
           }`}
           onClick={toggleThemeHandler}
         >
-          {isDarkTheme ? "LIGHT⛅" : "DARK🌛"}
+          {isDarkTheme ? "⛅" : "🌛"}
         </button>
-        <RiVideoAddLine className="cursor-pointer" size={30} />
-        <IoMdNotificationsOutline className="cursor-pointer" size={30} />
-        <HiOutlineUserCircle className="cursor-pointer" size={30} />
+        <RiVideoAddLine className="cursor-pointer " size={25} />
+        <IoMdNotificationsOutline className="cursor-pointer" size={25} />
+        <HiOutlineUserCircle className="cursor-pointer" size={25} />
       </div>
     </div>
   );
