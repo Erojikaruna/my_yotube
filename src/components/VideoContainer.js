@@ -22,8 +22,8 @@ const VideoContainer = () => {
   return (
     <div>
       <div
-        className={`flex  flex-wrap gap-4  justify-star ${
-          theme ? "bg-gray-900 text-white" : "bg-white text-black"
+        className={`flex  flex-wrap overflow-hidden justify-around  ${
+          theme ? "bg-[#0f0f0f] text-white" : "bg-white text-black"
         }`}
       >
         {videos.map((video) => (

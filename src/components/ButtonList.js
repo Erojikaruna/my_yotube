@@ -6,7 +6,7 @@ const ButtonList = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   return (
     <div
-      className={` flex w-[200px] shadow-lg -mt-9 fixed flex-nowrap text-sm  ${
+      className={` w-screen flex  shadow-lg -mt-10 py-6 fixed flex-nowrap text-sm overflow-x-scroll scrollbar-thin  ${
         theme ? " text-white" : " text-black"
       }`}
     >

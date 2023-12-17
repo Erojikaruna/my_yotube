@@ -17,131 +17,208 @@ import SidebarItems from "./SidebarItems";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  const theme = useSelector((store) => store.theme.isDarkTheme);
   //Early return pattern
   if (!isMenuOpen) return <SidebarItems />;
 
   return (
-    <div className="sidebar fixed bottom-0 left-0 h-screen right-0 z-30 md:h-full w-[215px] ml-6 top-12 overflow-hidden overflow-y-scroll py-4 translate-x-[-240px] md:translate-x-0 transition-all">
+    <div
+      className={`sidebar fixed bottom-0 left-0 h-screen right-0 z-30 md:h-full w-[190px] ml-6 top-12 overflow-hidden overflow-y-scroll py-4 translate-x-[-240px] md:translate-x-0 transition-all scrollbar-thin ${
+        theme ? "bg-[#0f0f0f]" : "bg-white"
+      }`}
+    >
       <div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
             <Link to="/">
-              <AiFillHome size="25" />
+              <AiFillHome size="20" />
             </Link>
           </span>
           <span>Home</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <BiSolidVideos size="25" />
+            <BiSolidVideos size="20" />
           </span>
           <span>Shorts</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <MdSubscriptions size="25" />
+            <MdSubscriptions size="20" />
           </span>
           <span>Subscriptions</span>
         </div>
       </div>
-      <hr className="my-5 border-gray-500" />
+      <hr className="my-5 mr-4 border-gray-500" />
       <h1>Explore</h1>
       <div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <MdLocalFireDepartment size="25" />
+            <MdLocalFireDepartment size="20" />
           </span>
           <span>Trending</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <BiSolidShoppingBag size="25" />
+            <BiSolidShoppingBag size="20" />
           </span>
           <span>Shopping</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <CgMusicNote size="25" />
+            <CgMusicNote size="20" />
           </span>
           <span>Music</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <FiFilm size="25" />
+            <FiFilm size="20" />
           </span>
           <span>Films</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <MdLiveTv size="25" />
+            <MdLiveTv size="20" />
           </span>
           <span>Live</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <IoGameControllerSharp size="25" />
+            <IoGameControllerSharp size="20" />
           </span>
           <span>Gaming</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <ImNewspaper size="25" />
+            <ImNewspaper size="20" />
           </span>
           <span>News</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <GiDiamondTrophy size="25" />
+            <GiDiamondTrophy size="20" />
           </span>
           <span>Sport</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <RiLightbulbLine size="25" />
+            <RiLightbulbLine size="20" />
           </span>
           <span>Learning</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <GiEclipse size="25" />
+            <GiEclipse size="20" />
           </span>
           <span>Fashion & beauty</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <MdPodcasts size="25" />
+            <MdPodcasts size="20" />
           </span>
           <span>Podcasts</span>
         </div>
       </div>
-      <hr className="my-5 border-gray-500" />
+      <hr className="my-5 mr-4 border-gray-500" />
       <div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <FiSettings size="25" />
+            <FiSettings size="20" />
           </span>
           <span>Settings</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <AiOutlineFlag size="25" />
+            <AiOutlineFlag size="20" />
           </span>
           <span>Report history</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <FiHelpCircle size="25" />
+            <FiHelpCircle size="20" />
           </span>
           <span>Help</span>
         </div>
-        <div className="flex p-2 w-48 rounded-xl items-center hover:bg-gray-200">
+        <div
+          className={`flex p-2 w-44 rounded-xl items-center  ${
+            theme ? "hover:bg-neutral-800" : "hover:bg-gray-200"
+          }`}
+        >
           <span className="mr-4">
-            <RiFeedbackLine size="25" />
+            <RiFeedbackLine size="20" />
           </span>
           <span>Send feedback</span>
         </div>
       </div>
-      <hr className="my-5 border-gray-500" />
+      <hr className="my-5 mr-4 border-gray-500" />
       <div className="text-black/[0.5] text-[12px]">Clone by: Aruna</div>
     </div>
   );

@@ -11,16 +11,16 @@ const VideoCard = ({ info }) => {
 
   return (
     <div
-      className={`p-3 w-[350px] h-70 shadow-lg ${
-        theme ? "bg-gray-900 text-white" : "bg-white text-black"
+      className={`p-3 w-[24rem] h-70 shadow-lg ${
+        theme ? "bg-[#0f0f0f] text-white" : "bg-white text-black"
       }`}
     >
       <img
-        className="rounded-lg"
+        className="rounded-lg w-96"
         alt="thumbnail"
         src={thumbnails?.medium?.url}
       />
-      <ul className={theme ? "text-gray-400 text-md" : "text-gray-900 text-md"}>
+      <ul className={theme ? "text-white text-md" : " "}>
         <li className=" font-medium truncate">{title}</li>
         <li className="truncate">{channelTitle}</li>
         <li className="text-sm">

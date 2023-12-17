@@ -59,13 +59,13 @@ const Header = () => {
   return (
     <div
       className={` fixed top-0 left-0 z-20 flex  justify-between items-center p-2  px-5  w-screen ${
-        isDarkTheme ? "bg-gray-900 text-white" : "bg-slate-50 text-black"
+        isDarkTheme ? "bg-[#0f0f0f] text-white" : "bg-slate-50 text-black"
       }`}
     >
       <div className="">
         <div className="flex col-span-1">
           <SlMenu
-            className={` mt-3 ${isDarkTheme ? "text-white" : "text-black"}`}
+            className={` mt-3 ${isDarkTheme ? "#fff" : "#000"}`}
             size={20}
             onClick={() => toggleMenuHandler()}
           />
@@ -87,7 +87,7 @@ const Header = () => {
         <div className="flex col-span-9">
           <input
             className={`w-[30rem] p-1 px-4 border border-gray-400 rounded-l-full focus:outline-none focus-within:border-blue-500 ${
-              isDarkTheme ? "bg-gray-900 " : "bg-white"
+              isDarkTheme ? "bg-[#0f0f0f]  " : "bg-white"
             }`}
             type="text"
             placeholder="Search"
@@ -106,7 +106,7 @@ const Header = () => {
         {showSuggestions && (
           <div
             className={`py-2 px-3 m-2 w-[400px]  rounded-lg  absolute ${
-              isDarkTheme ? "bg-gray-900 text-white" : "bg-white text-black"
+              isDarkTheme ? "bg-[#0f0f0f] text-white" : "bg-white text-black"
             }`}
           >
             <ul>

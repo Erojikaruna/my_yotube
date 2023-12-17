@@ -8,8 +8,8 @@ const Body = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   return (
     <div
-      className={` flex justify-end w-full min-h-screen ${
-        theme ? "bg-gray-900 text-white" : "bg-white"
+      className={` flex flex-nowrap min-h-screen ${
+        theme ? "bg-[#0f0f0f] text-white" : "bg-white"
       }`}
     >
       <Sidebar />

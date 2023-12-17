@@ -65,14 +65,20 @@ const Comment = ({ data }) => {
   const { name, text, replies } = data;
   return (
     <div
-      className={`flex shadow-sm border bg-gray-100 p-1   rounded-lg my-1 ${
-        theme ? "bg-gray-900" : "bg-gray-100"
+      className={`flex shadow-sm p-1   rounded-lg my-1 ${
+        theme ? "bg-[#0c0c0c] text-white" : " border bg-gray-100 "
       }`}
     >
       <img
-        className="w-12 h-12"
+        className={`w-12 h-12 ${
+          theme ? "w-8 h-8 mt-2 rounded-2xl" : "#000 w-8 h-8 mt-2"
+        }`}
         alt="user"
-        src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+        src={
+          theme
+            ? "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg"
+            : "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+        }
       />
 
       <div className="px-3">
